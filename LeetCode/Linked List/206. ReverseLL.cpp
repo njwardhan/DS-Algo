@@ -9,7 +9,7 @@
  * };
  */
 
-//1. Iterative method: O(N) time and constant space solution
+// 1. Iterative method: O(N) time and constant space solution
 
 class Solution {
 public:
