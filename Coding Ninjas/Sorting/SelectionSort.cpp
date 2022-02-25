@@ -22,3 +22,36 @@ void selectionSort(vector<int>& arr, int n)
         i++;
     }
 }
+
+// Recursive Code for Selection Sort
+
+#include <iostream>
+#include <bits/stdc++.h>
+#include <vector>
+using namespace std;
+
+void SelectionSort(int arr[], int size)
+{
+    if(size == 0 || size == 1)
+        return;
+
+    int min = 0;
+    for(int i = 0; i < size; i++)
+    {
+        if(arr[i] < arr[min])
+            min = i;
+    }
+    swap(arr[0], arr[min]);
+    SelectionSort(arr+1, size-1);
+}
+
+int main() 
+{
+    int arr[13] = {-1,541,3,-124221,11214, 12, 43, 122141, 125, -124, 0, 199, 7};
+
+    SelectionSort(arr,13);
+
+    for(int i = 0; i < 13; i++)
+        cout<<arr[i]<<" ";
+    return 0;
+}

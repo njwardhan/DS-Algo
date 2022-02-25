@@ -20,3 +20,25 @@ void insertionSort(int n, vector<int> &arr){
         i++; 
     }  
 }
+
+// Recursive Solution
+
+void InsertionSort(int arr[], int start_index, int size)
+{
+    // base case
+    if(start_index == size)
+        return;
+
+    int temp = arr[start_index];
+    int j = start_index-1;
+    while(j >= 0)
+    {
+        if(temp < arr[j])
+            arr[j+1] = arr[j];
+        else
+            break;
+        j--;
+    }
+    arr[j+1] = temp;
+    InsertionSort(arr, start_index+1, size);
+}

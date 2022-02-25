@@ -43,3 +43,18 @@ void bubbleSort(vector<int>& arr, int n)
     }
 }
 
+// Recursive Solution for Bubble Sort
+
+void BubbleSort(int arr[], int size)
+{
+    if(size == 0 || size == 1)
+        return;
+    
+    for(int i = 0; i < size-1; i++)
+    {
+        if(arr[i] > arr[i+1])
+            swap(arr[i], arr[i+1]);
+    }
+    BubbleSort(arr, size-1);
+}
+
