@@ -100,7 +100,7 @@ struct Node
 };
 */
 class Solution{
-        int answer = 0;
+    int answer = 0;
 public:
 
     void Traversal(struct Node* node, int count)
