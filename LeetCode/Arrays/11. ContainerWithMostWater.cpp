@@ -24,3 +24,28 @@ public:
         return max_capacity;
     }
 };
+
+// Much similar to the above code only
+// Daily challenge: 5th April 2022 
+
+class Solution {
+public:
+    int maxArea(vector<int>& height) {
+        int start = 0, end = height.size()-1;
+        int max_area = INT_MIN;
+        
+        while(start <= end)
+        {
+            int temp_area = min(height[start], height[end]) * (end-start);
+            
+            if(temp_area >= max_area)
+                max_area = temp_area;
+            
+            if(height[start] <= height[end])
+                start++;
+            else
+                end--;
+        }
+        return max_area;
+    }
+};
