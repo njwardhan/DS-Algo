@@ -40,3 +40,36 @@ public:
         return result;
     }
 };
+
+// 3. Stack approach - O(N) space time solution with decent LC performance
+
+class Solution {
+public:
+    string removeDuplicates(string s) {
+        stack<int> st;
+        int i = 0;
+        
+        while(i < s.length())
+        {
+            if(st.empty())
+                st.push(s[i]);
+            else if(st.top() == s[i])
+                st.pop();
+            else
+                st.push(s[i]);
+            
+            i++;
+        }
+        
+        string answer = "";
+        while(!st.empty())
+        {
+            char temp = st.top();
+            st.pop();
+            answer += temp;
+        }
+        
+        reverse(answer.begin(), answer.end());
+        return answer;
+    }
+};
