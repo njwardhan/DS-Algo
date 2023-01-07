@@ -1,4 +1,4 @@
-// O(NlogN) time and constant space solution
+// 1. O(NlogN) time and constant space solution
 
 class Solution {
 public:
@@ -17,3 +17,5 @@ public:
         return count;
     }
 };
+
+// 2. Using frequency, the complexity could be brought down to linear?!
